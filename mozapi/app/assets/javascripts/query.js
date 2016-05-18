@@ -1,6 +1,6 @@
 var ready = function() {
   $('#submit-btn').click(function(){
-    window.location.href = "http://localhost:3000/show" + "?url=" + $('#website-url').val();
+    window.location.href = "http://104.236.156.31//show" + "?url=" + $('#website-url').val();
   });
 }
 
