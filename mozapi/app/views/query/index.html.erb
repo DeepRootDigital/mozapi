@@ -1,13 +1,46 @@
+<div class=""
 <h1> <%= @url %> </h1>
 <div class="results-container">
-  <div class="page-size">
-    <h4>Page Size</h4>
-    <p><%= @page_size.round(2) %></p>
+  <div class="performance">
+    <div class="total">
+      <h4>Performance Score</h4>
+      <p><%= @performance_score[:total] %></p>
+      <%= image_tag @desktop_screenshot %>
+    </div>
+    <div class="top">
+      <h4>Page Size</h4>
+      <p><%= @performance_score[:pageSize] %></p>
+      <h4>Page Requests</h4>
+      <p><%= @performance_score[:pageRequests] %></p>
+      <h4>Page Speed</h4>
+      <p><%= @performance_score[:pageSpeed] %></p> 
+    </div>
+    <div class="bottom">
+      <h4>Browser Caching</h4>
+      <p><%= @performance_score[:browserCaching] %></p>
+      <h4>Page Redirects</h4>
+      <p><%= @performance_score[:pageRedirects] %></p>
+      <h4>Compression</h4>
+      <p><%= @performance_score[:compression] %></p>
+      <h4>Render Blocking</h4>
+      <p><%= @performance_score[:renderBlocking] %></p>
+    </div>
   </div>
   <div class="mobile">
+    <div class="total">
+      <h4>Mobile Score</h4>
+      <p><%= @mobile_score[:total].to_s + "/30" %> </p>
+    </div> 
+    <div class="screenshot">
+      <%= image_tag @mobile_screenshot %>
+    </div>
     <div class="responsive">
-      <h4> Responsive </h4>
-      <p> <%= @is_responsive %> </p>
+      <h4>Responsive</h4>
+      <p><%= @mobile_score[:responsive] %></p>
+    </div>
+    <div class="viewports">
+      <h4>View Ports</h4>
+      <p><%= @mobile_score[:viewport] %></p>
     </div>
   </div>
 </div>
